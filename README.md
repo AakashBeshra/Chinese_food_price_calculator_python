@@ -1,1 +1,1 @@
-# Python-Project
+# Chinese food price calculator
