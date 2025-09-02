@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Sri Sai Global Kitchen</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <style>
+        /* Premium Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, #333333, #1e1e1e);
+            color: #ffd700;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 15px 15px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 0;
+            color: #d4af37;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .details p {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .details strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Button Styling */
+        .btn-return {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #d4af37;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-return:hover {
+            background-color: #b89c2e;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header h2 {
+                font-size: 1.2rem;
+            }
+
+            .details p {
+                font-size: 1rem;
+            }
+
+            .btn-return {
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Sri Sai Global Kitchen</h1>
+    <h2>Order Confirmation</h2>
+</header>
+
+<div class="container">
+    <div class="details">
+        <p><strong>Item:</strong> {{ details['item_name'] }}</p>
+        <p><strong>Size:</strong> {{ details['size'] }}</p>
+        <p><strong>Quantity:</strong> {{ details['quantity'] }}</p>
+        <p><strong>Total Cost:</strong> ₹{{ details['total_cost'] }}</p>
+        <p><strong>Message:</strong> {{ details['message'] }}</p>
+    </div>
+    <a href="/" class="btn-return">Order Another Item</a>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sri Sai Global Kitchen. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

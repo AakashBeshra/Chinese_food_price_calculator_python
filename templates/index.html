@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sai Global Kitchen - Premium Menu</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <style>
+        /* Ultra-Premium Style */
+        body {
+            background-color: #0d0d0d;
+            font-family: 'Roboto', sans-serif;
+            color: #e5e5e5;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+    
+        /* Header */
+        header {
+            background: radial-gradient(circle, #222 0%, #111 100%);
+            color: #ffd700;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+            position: relative;
+            animation: fadeIn 1.5s ease;
+        }
+    
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #ffc700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 0.5rem 0;
+        }
+    
+        header p {
+            font-size: 1.3rem;
+            color: #bdb76b;
+            font-weight: 500;
+        }
+    
+        header img {
+            max-width: 120px;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            transition: transform 0.5s, opacity 0.5s ease;
+        }
+    
+        header img:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+    
+        /* Form Container */
+        .form-container {
+            background: #1c1c1c;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+            margin-top: -60px;
+            border: 2px solid #444;
+            transition: transform 0.3s, background 0.3s;
+        }
+    
+        .form-container:hover {
+            transform: scale(1.02);
+            background: #222;
+        }
+    
+        /* Form Inputs */
+        .form-control {
+            background-color: #333;
+            color: #ffd700;
+            border: 2px solid #555;
+            border-radius: 8px;
+            padding: 0.75rem;
+            transition: border-color 0.3s;
+            height: 50px; /* Increase height for better visibility */
+            font-size: 1rem; /* Adjust font size if needed */
+        }
+    
+        .form-control:focus {
+            border-color: #ffd700;
+            background-color: #383838;
+        }
+    
+        .form-group label {
+            font-weight: 500;
+            color: #ffd700;
+            font-size: 1.1rem;
+        }
+    
+        .form-control::placeholder {
+            color: #999;
+        }
+    
+        /* Total Cost Display */
+        .total-cost {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffc700;
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+            margin-top: 1.5rem;
+        }
+    
+        /* Button */
+        .btn-custom {
+            background-color: #ffc107;
+            color: #222;
+            padding: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s;
+            width: 100%;
+        }
+    
+        .btn-custom:hover {
+            background-color: #e5a500;
+            transform: translateY(-2px);
+        }
+        
+        /* Exit Button */
+        .btn-exit {
+            background-color: #dc3545;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s;
+            border: none;
+            margin-top: 1rem;
+        }
+    
+        .btn-exit:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }
+    
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #b3b3b3;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 1rem;
+            border-radius: 15px 15px 0 0;
+            margin-top: 2rem;
+            box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.5);
+        }
+    
+        /* Autocomplete Styling */
+        .ui-autocomplete {
+            background-color: #2d2d2d;
+            border: 1px solid #555;
+            max-height: 150px;
+            overflow-y: auto;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    
+        .ui-menu-item {
+            padding: 8px 12px;
+            color: #ffd700;
+            transition: background 0.3s ease;
+        }
+    
+        .ui-menu-item:hover {
+            background-color: #444;
+            color: #ffd700;
+        }
+    
+        /* Keyframe for fade-in animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        /* Exit button container */
+        .exit-container {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Sri Sai Global Kitchen</h1>
+    <p>Indulge in a Premium Dining Experience</p>
+</header>
+
+<div class="container my-5">
+    <div class="form-container mx-auto">
+        <form action="/process_order" method="post" onsubmit="return validateOrder();">
+            <div class="form-group">
+                <label for="item_name">Select Item:</label>
+                <input type="text" name="item_name" id="item_name" class="form-control" placeholder="Type or select an item" required onchange="calculateCost()">
+            </div>
+
+            <div class="form-group">
+                <label for="size">Select Size:</label>
+                <select name="size" id="size" class="form-control" required onchange="calculateCost()">
+                    <option value="Single">Single</option>
+                    <option value="Full">Full</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" id="quantity" min="1" class="form-control" placeholder="Enter quantity" required oninput="calculateCost()">
+            </div>
+
+            <div class="total-cost mb-3" id="total_cost">Total Cost: ₹0</div>
+
+            <div class="form-group">
+                <label for="amount_paid">Amount Paid:</label>
+                <input type="number" name="amount_paid" id="amount_paid" step="0.01" class="form-control" placeholder="Enter amount paid" required>
+            </div>
+
+            <button type="submit" class="btn btn-custom">Place Order</button>
+        </form>
+        
+        <div class="exit-container">
+            <button class="btn-exit" onclick="shutdownApp()">
+                <i class="fas fa-power-off"></i> Exit Application
+            </button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sri Sai Global Kitchen. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    const menu = {{ menu | tojson }};
+    $(document).ready(function() {
+        const items = Object.keys(menu);
+        $("#item_name").autocomplete({
+            source: items,
+            minLength: 0,
+            delay: 0
+        }).focus(function() {
+            $(this).autocomplete("search", ""); // Show all options on focus
+        });
+    });
+
+    function calculateCost() {
+        const itemName = document.getElementById('item_name').value;
+        const size = document.getElementById('size').value;
+        const quantity = parseInt(document.getElementById('quantity').value);
+
+        if (itemName in menu && size in menu[itemName]) {
+            const cost = menu[itemName][size] * quantity;
+            document.getElementById('total_cost').innerText = 'Total Cost: ₹' + cost;
+        } else {
+            document.getElementById('total_cost').innerText = 'Please select a valid item and size.';
+        }
+    }
+
+    function validateOrder() {
+        const totalCost = parseFloat(document.getElementById('total_cost').innerText.replace('Total Cost: ₹', ''));
+        const amountPaid = parseFloat(document.getElementById('amount_paid').value);
+        
+        if (amountPaid < totalCost) {
+            alert("The amount paid is less than the total cost. Please enter a valid amount.");
+            return false; // Prevent form submission
+        }
+        return confirm('Do you want to submit the order?');
+    }
+    
+    function shutdownApp() {
+        if (confirm('Are you sure you want to exit the application?')) {
+            // This will work with the hidden console
+            window.location.href = '/shutdown';
+        }
+    }
+</script>
+</body>
+</html>
